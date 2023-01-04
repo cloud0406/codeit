@@ -14,15 +14,15 @@
 
 ### 정리
 
-커밋: 프로젝트 디렉토리의 특정 모습을 하나의 버전으로 남기는 행위 & 그 결과물
+==**커밋**: 프로젝트 디렉토리의 특정 모습을 하나의 버전으로 남기는 행위 & 그 결과물==
 
-레포지토리: 커밋이 저장되는 곳 (.git 디렉토리, 프로젝트 디렉토리와 별개)
+==**레포지토리**: 커밋이 저장되는 곳 (.git 디렉토리, 프로젝트 디렉토리와 별개)==
 
 ## git 사용
 
 터미널에서 'MathTool'이라는 프로젝트 생성
 
-```json
+```
 mkdir MathTool
 ```
 
@@ -36,7 +36,7 @@ git init
 
 만든 MathTool 디렉토리에서 파일을 하나 생성 후 저장 (예시로 calculator.js을 만듬)
 
-커밋을 하기 전에 반드시 config 명령어를 통해 깃에게 커밋한 사람을 알려줘야 한다.
+커밋을 하기 전에 반드시 `config` 명령어를 통해 깃에게 커밋한 사람을 알려줘야 한다.
 
 ```
 git config user.name "codeit"
@@ -75,32 +75,32 @@ git add calculator.js
 
 ### 정리 (커밋에 관한 주의사항)
 
-1. 처음으로 커밋을 하기 전 config 명령어로 사용자의 이름과 이메일 주소를 설정
-2. 커밋 메시지 남기기 (옵션 -m)
-3. 커밋할 파일을 git add로 지정
+1. 처음으로 커밋을 하기 전 `config` 명령어로 사용자의 이름과 이메일 주소를 설정
+2. 커밋할 파일을 `git add`로 지정
+3. 커밋 메시지 남기기 (`git commit -m`)
 
 ## git의 3가지 작업 영역
 
 git은 내부적으로 크게 다음과 같은 3가지 종류의 작업 영역을 두고 동작함.
 
-1. working directory
-2. staging area
-3. repository
+**1. working directory**
+**2. staging area**
+**3. repository**
 
 첫 번째 영역인 working directory란 작업을 하는 프로젝트 디렉토리를 말한다. (위의 작업을 예시로 들면 MathTool이 이에 해당)
 
-두 번째 영역인 staging area는 git add한 파일들이 존재하는 영역. 커밋을 하게되면 staging area에 잌ㅅ는 파일들만 커밋에 반영된다.
+두 번째 영역인 staging area는 git add한 파일들이 존재하는 영역. 커밋을 하게되면 staging area에 있는 파일들만 커밋에 반영된다.
 
 세 번째 영역인 repository는 working directory의 변경 이력들이 저장되어 있는 영역. 즉, 커밋들이 저장되는 영역을 말한다.
 
-- working directory에서 작업 후
+- working directory에서 작업 후,
 - 작업한 파일들을 git add,
 - 커밋을 하면 staging area에 있던 파일들의 모습이 스냅샷처럼 레포지토리(.git 디렉토리)에 저장됨
 
 <img src = "./image.png">
 
-![poster](./image.png)
+<img src = "./image2.png">
 
-만약 working directory에서 여러 파일을 수정하는 작업을 하고 일부만 커밋에 반영하고 싶을때, 반영하고 싶은 파일들만 git add를 통해 staging area에 올리고 커밋에 반영할 수 있기 때문에 staging area가 필요하다.
+**만약 working directory에서 여러 파일을 수정하는 작업을 하고 일부만 커밋에 반영하고 싶을때, 반영하고 싶은 파일들만 git add를 통해 staging area에 올리고 커밋에 반영할 수 있기 때문에 staging area가 필요하다.**
 
 working directory는 working tree, staging area는 index라고도 한다.
