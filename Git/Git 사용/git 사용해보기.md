@@ -14,9 +14,9 @@
 
 ### 정리
 
-==**커밋**==: 프로젝트 디렉토리의 특정 모습을 하나의 버전으로 남기는 행위 & 그 결과물==
+**커밋**: 프로젝트 디렉토리의 특정 모습을 하나의 버전으로 남기는 행위 & 그 결과물
 
-==**레포지토리**==: 커밋이 저장되는 곳 (.git 디렉토리, 프로젝트 디렉토리와 별개)==
+**레포지토리**: 커밋이 저장되는 곳 (.git 디렉토리, 프로젝트 디렉토리와 별개)
 
 ## git 사용
 
@@ -84,14 +84,16 @@ git add calculator.js
 git은 내부적으로 크게 다음과 같은 3가지 종류의 작업 영역을 두고 동작함.
 
 **1. working directory**
+
 **2. staging area**
+
 **3. repository**
 
-첫 번째 영역인 working directory란 작업을 하는 프로젝트 디렉토리를 말한다. (위의 작업을 예시로 들면 MathTool이 이에 해당)
+첫 번째 영역인 **working directory**란 작업을 하는 프로젝트 디렉토리를 말한다. (위의 작업을 예시로 들면 MathTool이 이에 해당)
 
-두 번째 영역인 staging area는 git add한 파일들이 존재하는 영역. 커밋을 하게되면 staging area에 있는 파일들만 커밋에 반영된다.
+두 번째 영역인 **staging area**는 git add한 파일들이 존재하는 영역. 커밋을 하게되면 staging area에 있는 파일들만 커밋에 반영된다.
 
-세 번째 영역인 repository는 working directory의 변경 이력들이 저장되어 있는 영역. 즉, 커밋들이 저장되는 영역을 말한다.
+세 번째 영역인 **repository**는 working directory의 변경 이력들이 저장되어 있는 영역. 즉, 커밋들이 저장되는 영역을 말한다.
 
 - working directory에서 작업 후,
 - 작업한 파일들을 git add,
