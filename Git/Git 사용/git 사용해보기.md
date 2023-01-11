@@ -106,3 +106,100 @@ git은 내부적으로 크게 다음과 같은 3가지 종류의 작업 영역�
 **만약 working directory에서 여러 파일을 수정하는 작업을 하고 일부만 커밋에 반영하고 싶을때, 반영하고 싶은 파일들만 git add를 통해 staging area에 올리고 커밋에 반영할 수 있기 때문에 staging area가 필요하다.**
 
 working directory는 working tree, staging area는 index라고도 한다.
+
+### git add 더 알아보기
+
+1. 'git status'를 통해 현재 상태를 확인 가능 (깃이 인식하고 있는 프로젝트 디렉토리의 현재 상태를 보여줌 -> 커밋하기전 git status로 staging area에 수정한 파일이 전부 있는지 확인할때 사용)
+
+2. 'git add 디렉토리명/' 을 해주면 디렉토리내의 모든 파일이 staging area에 추가됨.
+
+3. 'git add .'을 해주면 현재 프로젝트 디렉토리내에서 변경사항이 생긴 모든 파일을 staging area에 추가함. (이렇게 자주 쓰임)
+
+## git이 보는 파일의 4가지 상태
+
+Git으로 관리되는 파일은 일종의 '상태(status)'라는 걸 가지고 있다.
+
+일단 Git에서 파일들은 크게 다음 2가지 상태를 가진다.
+
+1. Untracked 상태
+2. Tracked 상태
+
+그리고 Tracked 상태는 다시 아래와 같은 3가지 상태로 나눌 수 있다.
+
+1. Staged 상태
+2. Unmodified 상태
+3. Modified 상태
+
+1) Untracked 상태
+
+Untracked는 '추적되지 않고 있는'이라는 뜻. 이 상태는 파일이 Git에 의해서 그 변동사항이 전혀 추적되고 있지 않는 상태를 뜻함. 예를 들어, 파일을 새로 생성하고 그 파일을 한 번도 git add 해주지 않았다면 이 상태이다.
+
+2. Tracked 상태
+
+파일이 Git에 의해 그 변동사항이 추적되고 있는 상태입니다. 이 상태는 다시 그 특성에 따라 3가지 상태로 나뉘게 된다.
+
+(1) Staged 상태
+
+파일의 내용이 수정되고나서, staging area에 올라와있는 상태를 Staged(스테이징된, stage area에 올려진) 상태.
+
+새로 생성한 파일에 내용을 쓰고 git add를 해주거나
+한 번이라도 커밋에 포함됐었던 파일이라도 내용을 수정하고 git add를 해주면 이 상태.
+
+(2) Unmodified 상태
+
+현재 파일의 내용이 최신 커밋의 모습과 비교했을 때 전혀 바뀐 게 없는 상태면 그 파일은 Unmodified(수정되지 않은, 변한 게 없는) 상태. 커밋을 하고 난 직후에는 working directory 안의 모든 파일들이 이 상태가 된다.
+
+(3) Modified 상태
+
+최신 커밋의 모습과 비교했을 때 조금이라도 바뀐 내용이 있는 상태면 그 파일은 Modified(수정된) 상태.
+
+이렇게 Git에서 파일은 매 순간 4가지 상태 중 하나의 상태에 있게 된다. 이 내용을 그림으로 정리하면 아래와 같다.
+
+<img src = "./image3.jpeg">
+
+- Add the file : Untracked 상태의 파일을 처음으로 git add 해주면 Staged 상태가 된다.
+- Edit the file : 최신 커밋과 비교했을 때 차이가 없는 Unmodified 상태의 파일의 내용을 수정하면 Modified 상태가 된다.
+- Stage the file : Modified 상태의 파일을 git add 해주면 Staged 상태가 된다.
+- Remove the file : 파일을 삭제하면 당연히 Git에서 더이상 인식하지 않는다.
+- Commit : 커밋을 하면 staging area에 있던 파일들이 커밋에 반영되고, 이제 모든 파일들은 최신 커밋과 차이가 없게 되니까 Unmodified 상태가 된다.
+
+### git reset
+
+git add로 staing area에 올린 파일을 git reset을 사용하여 staging area에서 제거할 수 있다.
+
+```
+git reset '파일명'
+```
+
+staging area에서만 제거할 뿐, 변경된 모습은 working 디렉토리에 그대로 남아 있음(즉 변경된 작업상태는 그대로 유지)
+
+### git 커맨드의 사용법 알기
+
+```
+git help '알고 싶은 커맨드의 이름'
+man git-'알고 싶은 커맨드'
+```
+
+을 통해 커맨드의 의미 혹은 사용법을 좀 더 자세히 알 수 있다.
+
+ex)
+
+```
+git help add
+man git-add
+```
+
+사용하면 해당 커맨드에 대한 설명이 자세히 나오는데 해당 설명 화면에서 나가고 싶다면 'q' (quit)을 입력하면 된다.
+
+## git 커맨드 정리
+
+- git init : 현재 디렉토리를 Git이 관리하는 프로젝트 디렉토리(=working directory)로 설정하고 그 안에 레포지토리(.git 디렉토리) 생성
+- git config user.name 'codeit' : 현재 사용자의 아이디를 'codeit'으로 설정(커밋할 때 필요한 정보)
+- git config user.email 'teacher@codeit.kr' : 현재 사용자의 이메일 주소를 'teacher@codeit.kr'로 설정(커밋할 때 필요한 정보)
+- git add [파일 이름] : 수정사항이 있는 특정 파일을 staging area에 올리기
+  git add [디렉토리명] : 해당 디렉토리 내에서 수정사항이 있는 모든 파일들을 staging area에 올리기
+- git add . : working directory 내의 수정사항이 있는 모든 파일들을 staging area에 올리기
+- git reset [파일 이름] : staging area에 올렸던 파일 다시 내리기
+- git status : Git이 현재 인식하고 있는 프로젝트 관련 내용들 출력(문제 상황이 발생했을 때 현재 상태를 파악하기 위해 활용하면 좋음)
+- git commit -m "커밋 메시지" : 현재 staging area에 있는 것들 커밋으로 남기기
+- git help [커맨드 이름] : 사용법이 궁금한 Git 커맨드의 공식 메뉴얼 내용 출력
