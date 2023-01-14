@@ -155,7 +155,7 @@ Untracked는 '추적되지 않고 있는'이라는 뜻. 이 상태는 파일이 
 
 이렇게 Git에서 파일은 매 순간 4가지 상태 중 하나의 상태에 있게 된다. 이 내용을 그림으로 정리하면 아래와 같다.
 
-<img src = "./image3.jpeg">
+<img src = "./image3.png">
 
 - Add the file : Untracked 상태의 파일을 처음으로 git add 해주면 Staged 상태가 된다.
 - Edit the file : 최신 커밋과 비교했을 때 차이가 없는 Unmodified 상태의 파일의 내용을 수정하면 Modified 상태가 된다.
