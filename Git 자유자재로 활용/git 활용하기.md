@@ -45,3 +45,23 @@ git log --pretty=oneline -all
 위의 사진을 보면 별표 하나가 각각 커밋 하나씩이며, 갈라진 부분은 여러 브랜치로 코드 관리 흐름이 갈라지는 모습이다. 반대로 두 선이 하나로 합쳐지는 모습은 merge되는 부분이다.
 
 위의 사진처럼 해당 명령어를 사용하면 커밋과 브랜치의 흐름을 좀 더 정확하게 볼 수 있기 때문에 자주 쓰이는 옵션 중 하나이다.
+
+## Git GUI 환경에서 사용
+
+지금까지 CLI(Command Line Interface) 환경에서 Git을 사용했지만
+GUI(Graphic User Interface) 환경에서 Git을 사용하도록 도와주는 프로그램도 있다. 대표적인 프로그램들은 GitKraken, Sourcetree 등이며 이 중에서도 꽤 널리 쓰이고 있는 프로그램은 **Sourcetree**이다.
+
+Sourcetree는 Atlassian이라는 회사에서 만든 프로그램으로 깔끔하고 직관적인 UI로 유명한데, 아래 링크에서 다운받을 수 있다.
+
+- https://www.sourcetreeapp.com/
+
+이런 GUI 프로그램을 사용하면 터미널에 Git 커맨드를 치지 않아도 Git을 사용할 수 있으며 CLI 환경에서 필요했던 커맨드를 몰라도 Git을 사용할 수 있다. 뿐만 아니라 커밋 히스토리를 터미널에서 봤던 커밋 히스토리보다 더 깔끔한 모습으로 볼 수 있다는 장점도 있다.
+
+하지만 아직 Git 커맨드를 사용하는 방법도 모르는데 바로 이런 프로그램을 사용하는 건 좋지 않다. 일단 커맨드부터 하나씩 배워야 나중에 이런 프로그램을 사용하다가 문제가 생기더라도 현명하게 대처할 수 있기 때문이다.
+어느 정도 Git 커맨드에 익숙해진다면 그 후에는 GUI 프로그램도 한번 사용해보면 좋으며 특히, Sourcetree는 실무에서도 많이 쓰이는 프로그램이므로 혹시 Sourcetree를 좀더 제대로 배우고 싶으면 아래 문서를 참고하면 도움이 될 것이다.
+
+- https://support.atlassian.com/bitbucket-cloud/docs/tutorial-learn-bitbucket-with-sourcetree/
+
+또 만약 sourcetree가 아니더라도 아래 링크를 참고하여 원하는 GUI 프로그램을 사용해도 좋다.
+
+- https://git-scm.com/downloads/guis
